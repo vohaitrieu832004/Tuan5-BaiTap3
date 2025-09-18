@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+<h2>Đăng nhập</h2>
+<form action="/auth/login" method="post">
+  <input type="text" name="username" placeholder="Tên đăng nhập">
+  <input type="password" name="password" placeholder="Mật khẩu">
+  <button type="submit">Đăng nhập</button>
+</form>
+<a href="/auth/forgot">Quên mật khẩu?</a>
+
+<%- include('partials/footer') %>

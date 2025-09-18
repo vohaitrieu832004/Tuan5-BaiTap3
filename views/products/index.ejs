@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+<h2>Quản lý sản phẩm</h2>
+<a href="/products/create">Thêm sản phẩm</a>
+<link rel="stylesheet" href="/css/style.css">
+<ul>
+  <% products.forEach(p => { %>
+    <li>
+      <%= p.name %> - <%= p.price %> - <%= p.quantity %> 
+      (Nhà cung cấp: <%= p.supplier ? p.supplier.name : 'N/A' %>)
+      <a href="/products/edit/<%= p._id %>">Sửa</a>
+      <a href="/products/delete/<%= p._id %>">Xóa</a>
+    </li>
+  <% }) %>
+</ul>
+<%- include('../partials/footer') %>

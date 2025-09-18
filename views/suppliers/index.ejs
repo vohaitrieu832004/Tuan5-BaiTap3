@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+<h2>Quản lý nhà cung cấp</h2>
+<a href="/suppliers/create">Thêm nhà cung cấp</a>
+<ul>
+  <% suppliers.forEach(s => { %>
+    <li>
+      <%= s.name %> - <%= s.address %> - <%= s.phone %>
+      <a href="/suppliers/edit/<%= s._id %>">Sửa</a>
+      <a href="/suppliers/delete/<%= s._id %>">Xóa</a>
+    </li>
+  <% }) %>
+</ul>
+
+<%- include('../partials/footer') %>

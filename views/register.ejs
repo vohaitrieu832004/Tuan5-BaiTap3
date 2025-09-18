@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+<h2>Đăng ký</h2>
+<form action="/auth/register" method="post">
+  <input type="text" name="username" placeholder="Tên đăng ký">
+  <input type="password" name="password" placeholder="Mật khẩu">
+  <input type="email" name="email" placeholder="Email">
+  <input type="text" name="phone" placeholder="Số điện thoại">
+  <button type="submit">Đăng ký</button>
+</form>
+<%- include('partials/footer') %>

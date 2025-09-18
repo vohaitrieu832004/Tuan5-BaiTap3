@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+<form action="/products" method="get">
+  <input type="text" name="q" placeholder="Tìm sản phẩm...">
+  <button type="submit">Tìm</button>
+</form>
+
+<h2>Danh sách nhà cung cấp</h2>
+<ul>
+  <% suppliers.forEach(s => { %>
+    <li><a href="/products?supplier=<%= s._id %>"><%= s.name %></a></li>
+  <% }) %>
+</ul>
+
+<h2>Danh sách sản phẩm</h2>
+<ul>
+  <% products.forEach(p => { %>
+    <li><%= p.name %> - <%= p.price %> - <%= p.quantity %> (Nhà cung cấp: <%= p.supplier ? p.supplier.name : 'N/A' %>)</li>
+  <% }) %>
+</ul>
+
+<%- include('partials/footer') %>

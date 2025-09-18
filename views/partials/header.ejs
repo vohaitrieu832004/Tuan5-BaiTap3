@@ -1,0 +1,16 @@
+<header>
+  <h1>Quản lý sản phẩm</h1>
+  <link rel="stylesheet" href="/css/style.css">
+  <nav>
+    <a href="/">Trang chủ</a>
+    <a href="/products">Sản phẩm</a>
+    <a href="/suppliers">Nhà cung cấp</a>
+    <% if (!session.user) { %>
+      <a href="/auth/login">Đăng nhập</a>
+      <a href="/auth/register">Đăng ký</a>
+    <% } else { %>
+      <span>Xin chào <%= session.user.username %></span>
+      <a href="/auth/logout">Thoát</a>
+    <% } %>
+  </nav>
+</header>

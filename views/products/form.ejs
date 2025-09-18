@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+<h2><%= product._id ? 'Sửa sản phẩm' : 'Thêm sản phẩm' %></h2>
+<form action="<%= product._id ? '/products/edit/' + product._id : '/products/create' %>" method="post">
+  <input type="text" name="name" placeholder="Tên sản phẩm" value="<%= product.name %>">
+  <input type="number" name="price" placeholder="Giá" value="<%= product.price %>">
+  <input type="number" name="quantity" placeholder="Số lượng" value="<%= product.quantity %>">
+  <select name="supplier">
+    <% suppliers.forEach(s => { %>
+      <option value="<%= s._id %>" <%= product.supplier == s._id ? 'selected' : '' %>><%= s.name %></option>
+    <% }) %>
+  </select>
+  <button type="submit">Lưu</button>
+</form>
+<%- include('../partials/footer') %>

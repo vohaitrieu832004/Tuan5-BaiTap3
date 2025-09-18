@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+<h2><%= supplier._id ? 'Sửa nhà cung cấp' : 'Thêm nhà cung cấp' %></h2>
+<form action="<%= supplier._id ? '/suppliers/edit/' + supplier._id : '/suppliers/create' %>" method="post">
+  <input type="text" name="name" placeholder="Tên" value="<%= supplier.name %>">
+  <input type="text" name="address" placeholder="Địa chỉ" value="<%= supplier.address %>">
+  <input type="text" name="phone" placeholder="Số điện thoại" value="<%= supplier.phone %>">
+  <button type="submit">Lưu</button>
+</form>
+<%- include('../partials/footer') %>

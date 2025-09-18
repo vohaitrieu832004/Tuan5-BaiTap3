@@ -1,0 +1,9 @@
+<%- include('partials/header') %>
+
+<h2>Quên mật khẩu</h2>
+<form action="/auth/forgot" method="post">
+  <input type="email" name="email" placeholder="Nhập email của bạn">
+  <button type="submit">Gửi</button>
+</form>
+
+<%- include('partials/footer') %>
